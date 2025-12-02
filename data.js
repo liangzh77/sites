@@ -1219,6 +1219,15 @@ window.WEBPAGES_DATA = {
                 "功能": "Claude Code 的安装、使用、技巧、案例"
               }
             ]
+          },
+          {
+            "时间线管理": [
+              {
+                "名称": "时间线",
+                "地址": "https://timeline-book.vercel.app",
+                "功能": "记录重复发生的事件的时间线"
+              }
+            ]
           }
         ]
       }
