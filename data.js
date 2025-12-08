@@ -31,7 +31,29 @@ window.WEBPAGES_DATA = {
             ]
           },
           {
+            "最佳工具": [
+              {
+                "名称": "Google AI Studio",
+                "地址": "https://aistudio.google.com",
+                "备注": "",
+                "功能": "Google AI Studio全家桶"
+              },
+              {
+                "名称": "Google NotebookLM",
+                "地址": "https://notebooklm.google",
+                "备注": "",
+                "功能": "Google NotebookLM全家桶"
+              }
+            ]
+          },
+          {
             "聊天/内容生成": [
+              {
+                "名称": "Gemini",
+                "地址": "https://gemini.google.com",
+                "备注": "美国",
+                "功能": "综合型AI：内容生成、数据分析、编程"
+              },
               {
                 "名称": "ChatGPT",
                 "地址": "https://chatgpt.com",
@@ -43,12 +65,6 @@ window.WEBPAGES_DATA = {
                 "地址": "https://grok.com",
                 "备注": "美国",
                 "功能": "综合性AI：内容生成、数据分析、编程"
-              },
-              {
-                "名称": "Gemini",
-                "地址": "https://gemini.google.com",
-                "备注": "美国",
-                "功能": "综合型AI：内容生成、数据分析、编程"
               },
               {
                 "名称": "Claude",
@@ -131,6 +147,28 @@ window.WEBPAGES_DATA = {
             ]
           },
           {
+            "发布网站": [
+              {
+                "名称": "vercel",
+                "地址": "https://vercel.com",
+                "备注": "",
+                "功能": "免费网站服务器，功能强大，国内不可访问"
+              },
+              {
+                "名称": "netlify",
+                "地址": "https://app.netlify.com",
+                "备注": "",
+                "功能": "免费网站服务器，国内可访问"
+              },
+              {
+                "名称": "railway",
+                "地址": "https://railway.com",
+                "备注": "",
+                "功能": "免费网站服务器，国内可访问"
+              }
+            ]
+          },
+          {
             "AI办公（PPT等）": [
               {
                 "名称": "Gamma",
@@ -189,18 +227,64 @@ window.WEBPAGES_DATA = {
             ]
           },
           {
-            "发布网站": [
+            "AI办公-会议纪要": [
               {
-                "名称": "vercel",
-                "地址": "https://vercel.com",
-                "备注": "",
-                "功能": "免费网站服务器，功能强大"
+                "名称": "阿里通义听悟",
+                "地址": "https://tingwu.aliyun.com",
+                "备注": "中国",
+                "功能": "实时转录，音视频转文字，互联网内容提炼……"
               },
               {
-                "名称": "netlify",
-                "地址": "https://app.netlify.com",
-                "备注": "",
-                "功能": "免费网站服务器"
+                "名称": "讯飞听见",
+                "地址": "https://www.iflyrec.com",
+                "备注": "中国",
+                "功能": "音视频转文字，实时录音转文字，同传，翻译……"
+              },
+              {
+                "名称": "飞书妙记",
+                "地址": "https://www.feishu.cn/product/minutes?from=thosefree.com",
+                "备注": "中国",
+                "功能": "飞书文档中的会议纪要工具，实时转录，音视频转文字"
+              },
+              {
+                "名称": "腾讯会议AI",
+                "地址": "https://meeting.tencent.com/ai/index.html",
+                "备注": "中国",
+                "功能": "腾讯会议录制后会议纪要整理"
+              }
+            ]
+          },
+          {
+            "AI办公-脑图": [
+              {
+                "名称": "ProcessOn",
+                "地址": "https://www.processon.com",
+                "备注": "中国",
+                "功能": "AI思维导图"
+              },
+              {
+                "名称": "亿图脑图",
+                "地址": "https://www.edrawsoft.cn/mindmaster",
+                "备注": "中国",
+                "功能": "AI思维导图"
+              },
+              {
+                "名称": "GitMind思乎",
+                "地址": "https://gitmind.cn",
+                "备注": "中国",
+                "功能": "AI思维导图"
+              },
+              {
+                "名称": "boardmix 博思白板",
+                "地址": "https://boardmix.cn/ai-whiteboard",
+                "备注": "中国",
+                "功能": "实时协作的智慧白板上，一键生成PPT、用AI协助创作思维导图、AI绘画、AI写作，共享资源素材"
+              },
+              {
+                "名称": "妙办画板",
+                "地址": "https://imiaoban.com",
+                "备注": "中国",
+                "功能": "生成流程图、思维导图"
               }
             ]
           },
@@ -379,68 +463,6 @@ window.WEBPAGES_DATA = {
                 "地址": "https://changeclothesai.online",
                 "备注": "美国",
                 "功能": "上传一张自己的图片和衣服图，实现人物换衣服"
-              }
-            ]
-          },
-          {
-            "AI办公-会议纪要": [
-              {
-                "名称": "阿里通义听悟",
-                "地址": "https://tingwu.aliyun.com",
-                "备注": "中国",
-                "功能": "实时转录，音视频转文字，互联网内容提炼……"
-              },
-              {
-                "名称": "讯飞听见",
-                "地址": "https://www.iflyrec.com",
-                "备注": "中国",
-                "功能": "音视频转文字，实时录音转文字，同传，翻译……"
-              },
-              {
-                "名称": "飞书妙记",
-                "地址": "https://www.feishu.cn/product/minutes?from=thosefree.com",
-                "备注": "中国",
-                "功能": "飞书文档中的会议纪要工具，实时转录，音视频转文字"
-              },
-              {
-                "名称": "腾讯会议AI",
-                "地址": "https://meeting.tencent.com/ai/index.html",
-                "备注": "中国",
-                "功能": "腾讯会议录制后会议纪要整理"
-              }
-            ]
-          },
-          {
-            "AI办公-脑图": [
-              {
-                "名称": "ProcessOn",
-                "地址": "https://www.processon.com",
-                "备注": "中国",
-                "功能": "AI思维导图"
-              },
-              {
-                "名称": "亿图脑图",
-                "地址": "https://www.edrawsoft.cn/mindmaster",
-                "备注": "中国",
-                "功能": "AI思维导图"
-              },
-              {
-                "名称": "GitMind思乎",
-                "地址": "https://gitmind.cn",
-                "备注": "中国",
-                "功能": "AI思维导图"
-              },
-              {
-                "名称": "boardmix 博思白板",
-                "地址": "https://boardmix.cn/ai-whiteboard",
-                "备注": "中国",
-                "功能": "实时协作的智慧白板上，一键生成PPT、用AI协助创作思维导图、AI绘画、AI写作，共享资源素材"
-              },
-              {
-                "名称": "妙办画板",
-                "地址": "https://imiaoban.com",
-                "备注": "中国",
-                "功能": "生成流程图、思维导图"
               }
             ]
           },
