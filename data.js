@@ -79,6 +79,12 @@ window.WEBPAGES_DATA = {
                 "功能": "综合型AI：内容生成，偏互联网运营方向……"
               },
               {
+                "名称": "notion ai",
+                "地址": "https://www.notion.so/ai",
+                "备注": "",
+                "功能": "notion ai，调用前沿大模型"
+              },
+              {
                 "名称": "千问海外版",
                 "地址": "https://chat.qwen.ai",
                 "备注": "中国",
