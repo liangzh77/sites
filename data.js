@@ -753,6 +753,12 @@ window.WEBPAGES_DATA = {
                 "功能": "文生视频，图生视频，对口型"
               },
               {
+                "名称": "CyberCut",
+                "地址": "https://cybercut.ai/zh",
+                "备注": "中国",
+                "功能": "对话式操作，零基础也能剪视频"
+              },
+              {
                 "名称": "Vidu",
                 "地址": "https://www.vidu.cn",
                 "备注": "中国",
