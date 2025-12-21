@@ -1074,9 +1074,9 @@ window.WEBPAGES_DATA = {
           {
             "旅行规划": [
               {
-                "名称": "十一黄金周亲子旅游计划",
-                "地址": "https://101trip.netlify.app",
-                "功能": "京郊、全国20大旅行方案",
+                "名称": "旅游攻略",
+                "地址": "https://travel-draft.vercel.app",
+                "功能": "旅游攻略大集合",
               }
             ]
           }
