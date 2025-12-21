@@ -79,6 +79,12 @@ window.WEBPAGES_DATA = {
                 "功能": "综合型AI：内容生成，偏互联网运营方向……"
               },
               {
+                "名称": "notion ai",
+                "地址": "https://www.notion.so/ai",
+                "备注": "",
+                "功能": "notion ai，调用前沿大模型"
+              },
+              {
                 "名称": "千问海外版",
                 "地址": "https://chat.qwen.ai",
                 "备注": "中国",
@@ -751,6 +757,12 @@ window.WEBPAGES_DATA = {
                 "地址": "https://video.hunyuan.tencent.com",
                 "备注": "中国",
                 "功能": "文生视频，图生视频，对口型"
+              },
+              {
+                "名称": "CyberCut",
+                "地址": "https://cybercut.ai/zh",
+                "备注": "中国",
+                "功能": "对话式操作，零基础也能剪视频"
               },
               {
                 "名称": "Vidu",
