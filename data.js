@@ -1180,7 +1180,7 @@ window.WEBPAGES_DATA = {
             "其他": [
               {
                 "名称": "woolly run",
-                "地址": "https://woolly-run.vercel.app/",
+                "地址": "https://woolly-run.vercel.app",
                 "功能": "woolly run",
               },
             ]
