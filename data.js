@@ -1096,7 +1096,7 @@ window.WEBPAGES_DATA = {
             "公司网站": [
               {
                 "名称": "触角",
-                "地址": "https://chujiao-site.vercel.app",
+                "地址": "https://chujiao.vercel.app",
                 "功能": "网站优化",
               }
             ]
@@ -1173,6 +1173,15 @@ window.WEBPAGES_DATA = {
                 "名称": "狼人杀使用手册",
                 "地址": "https://whoswolf.netlify.app",
                 "功能": "狼人杀讲解，资料查阅，视频链接",
+              },
+            ]
+          },
+          {
+            "其他": [
+              {
+                "名称": "woolly run",
+                "地址": "https://woolly-run.vercel.app/",
+                "功能": "woolly run",
               },
             ]
           }
