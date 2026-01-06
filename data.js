@@ -1273,11 +1273,16 @@ window.WEBPAGES_DATA = {
             ]
           },
           {
-            "时间线管理": [
+            "管理": [
               {
                 "名称": "时间线",
                 "地址": "https://timeline-book.vercel.app",
                 "功能": "记录重复发生的事件的时间线"
+              },
+              {
+                "名称": "投资记录",
+                "地址": "https://invest-record.vercel.app",
+                "功能": "简洁的记录投资"
               }
             ]
           }
