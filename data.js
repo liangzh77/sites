@@ -167,6 +167,12 @@ window.WEBPAGES_DATA = {
                 "功能": "免费网站服务器，国内可访问"
               },
               {
+                "名称": "leancloud国内版",
+                "地址": "https://leancloud.cn",
+                "备注": "",
+                "功能": "免费网站服务器，国内可访问"
+              },
+              {
                 "名称": "railway",
                 "地址": "https://railway.com",
                 "备注": "",
