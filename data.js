@@ -1164,7 +1164,7 @@ window.WEBPAGES_DATA = {
               },
             ]
           },
-          {
+          {14:58 2026/1/24
             "塔防": [
               {
                 "名称": "towerfun",
@@ -1243,25 +1243,17 @@ window.WEBPAGES_DATA = {
             ]
           },
           {
-            "图像生成": [
+            "图片": [
               {
                 "名称": "教师节贺卡",
                 "地址": "https://card910.netlify.app",
                 "功能": "定制教师节贺卡"
-              }
-            ]
-          },
-          {
-            "图片拼接": [
+              },
               {
                 "名称": "图片拼接",
                 "地址": "https://image-stitch.netlify.app",
                 "功能": "简单的图片拼接，拖拽进来即完成拼接"
-              }
-            ]
-          },
-          {
-            "图片展示": [
+              },
               {
                 "名称": "照片墙",
                 "地址": "https://pic-wall.netlify.app",
@@ -1289,7 +1281,12 @@ window.WEBPAGES_DATA = {
                 "名称": "投资记录",
                 "地址": "https://invest-record.vercel.app",
                 "功能": "简洁的记录投资"
-              }
+              },
+              {
+                "名称": "家务清单",
+                "地址": "https://list-chore.netlify.app",
+                "功能": "打印一周家务清单"
+              },
             ]
           }
         ]
