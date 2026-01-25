@@ -643,6 +643,12 @@ window.WEBPAGES_DATA = {
           {
             "AI设计": [
               {
+                "名称": "Figma",
+                "地址": "https://www.figma.com",
+                "备注": "美国",
+                "功能": "专业的UI/UX设计和协作平台，支持实时协作、原型设计、设计系统管理"
+              },
+              {
                 "名称": "Canva可画",
                 "地址": "https://www.canva.cn",
                 "备注": "中国",
@@ -1061,7 +1067,7 @@ window.WEBPAGES_DATA = {
                 "地址": "https://www.bejson.com",
                 "备注": "",
                 "功能": "json在线格式化",
-              }
+              },
             ]
           }
         ]

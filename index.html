@@ -36,7 +36,7 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            max-width: 1400px;
+            max-width: 1680px;
             margin: 0 auto;
             overflow: hidden;
         }
@@ -172,6 +172,10 @@
             text-align: left;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* 默认允许换行（除了功能列） */
+        th:not(:nth-child(5)), td:not(:nth-child(5)) {
             white-space: normal;
             word-wrap: break-word;
             word-break: break-word;
@@ -201,48 +205,80 @@
         }
 
         /* 列宽度比例设置 - 有功能列时 */
-        /* 类型列 - 比例1 */
+        /* 类型列 - 10% */
         th:first-child, td:first-child {
-            width: 11.11%; /* 1/(1+1+3+1+3) = 1/9 */
+            width: 10%;
         }
 
-        /* 名称列 - 比例1 */
+        /* 名称列 - 25.75% */
         th:nth-child(2), td:nth-child(2) {
-            width: 11.11%; /* 1/(1+1+3+1+3) = 1/9 */
+            width: 13%;
         }
 
-        /* 地址列 - 比例3 */
+        /* 地址列 - 20% */
         th:nth-child(3), td:nth-child(3) {
-            width: 33.33%; /* 3/(1+1+3+1+3) = 3/9 */
+            width: 20%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        /* 备注列 - 比例1 */
+        /* 备注列 - 4.25% */
         th:nth-child(4), td:nth-child(4) {
-            width: 11.11%; /* 1/(1+1+3+1+3) = 1/9 */
+            width: 17%;
         }
 
-        /* 功能列 - 比例3 */
+        /* 功能列 - 40% */
         th:nth-child(5), td:nth-child(5) {
-            width: 33.33%; /* 3/(1+1+3+1+3) = 3/9 */
+            width: 40%;
+            position: relative;
+            cursor: default;
+            padding: 0.75rem;
+            vertical-align: middle;
         }
+
+        /* 通用悬浮提示框样式 */
+        .hover-tooltip {
+            position: fixed;
+            background-color: rgba(30, 30, 30, 0.95);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 10000;
+            pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        .hover-tooltip.show {
+            opacity: 1;
+        }
+
+        .hover-tooltip.function-tip {
+            white-space: normal;
+            max-width: 400px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
 
         /* 当没有功能列时的列宽度重新分配 */
         .no-function-column th:first-child,
         .no-function-column td:first-child {
-            width: 16.67%; /* 1/(1+1+3+1) = 1/6 */
+            width: 15%; /* 类型列 */
         }
 
         .no-function-column th:nth-child(2),
         .no-function-column td:nth-child(2) {
-            width: 16.67%; /* 1/(1+1+3+1) = 1/6 */
+            width: 38.75%; /* 名称列 */
         }
 
         .no-function-column th:nth-child(3),
         .no-function-column td:nth-child(3) {
-            width: 50%; /* 3/(1+1+3+1) = 3/6 */
+            width: 50%; /* 地址列 */
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -250,7 +286,7 @@
 
         .no-function-column th:nth-child(4),
         .no-function-column td:nth-child(4) {
-            width: 16.67%; /* 1/(1+1+3+1) = 1/6 */
+            width: 6.25%; /* 备注列 */
         }
 
         tr:hover td { background-color: var(--secondary-bg); }
@@ -580,6 +616,7 @@
                         
                         // 名称列
                         const nameCell = document.createElement('td');
+                        nameCell.className = 'name-cell';
                         const nameLink = document.createElement('a');
                         nameLink.href = tool['地址'];
                         nameLink.target = '_blank';
@@ -602,7 +639,15 @@
                         // 功能列（如果存在）
                         if (hasFunctionColumn) {
                             const functionCell = document.createElement('td');
-                            functionCell.textContent = tool['功能'] || '';
+                            functionCell.className = 'function-cell';
+                            const functionText = tool['功能'] || '';
+                            // 创建文本包装div，使用内联样式强制单行显示
+                            const textWrapper = document.createElement('div');
+                            textWrapper.textContent = functionText;
+                            textWrapper.style.cssText = 'white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; display: block;';
+                            functionCell.appendChild(textWrapper);
+                            // 添加data-full-text属性，用于tooltip显示完整文本
+                            functionCell.setAttribute('data-full-text', functionText);
                             row.appendChild(functionCell);
                         }
                         
@@ -707,12 +752,105 @@
                     }, 300);
                 }, 2000);
             }
+
+            // 检测功能列文本是否被截断并添加truncated类
+            checkFunctionCellTruncation() {
+                document.querySelectorAll('.function-cell').forEach(cell => {
+                    const textWrapper = cell.querySelector('div');
+                    if (textWrapper && textWrapper.scrollWidth > textWrapper.clientWidth) {
+                        cell.classList.add('truncated');
+                    } else {
+                        cell.classList.remove('truncated');
+                    }
+                });
+            }
+
+            // 创建悬浮提示元素
+            createHoverTooltip() {
+                if (this.hoverTooltip) return;
+                this.hoverTooltip = document.createElement('div');
+                this.hoverTooltip.className = 'hover-tooltip';
+                document.body.appendChild(this.hoverTooltip);
+            }
+
+            // 显示悬浮提示
+            showHoverTooltip(element, text, isFunction = false) {
+                if (!this.hoverTooltip) this.createHoverTooltip();
+
+                this.hoverTooltip.textContent = text;
+                this.hoverTooltip.classList.toggle('function-tip', isFunction);
+
+                const rect = element.getBoundingClientRect();
+                this.hoverTooltip.style.left = rect.left + 'px';
+                this.hoverTooltip.style.top = (rect.bottom + 4) + 'px';
+
+                // 延迟显示以触发动画
+                requestAnimationFrame(() => {
+                    this.hoverTooltip.classList.add('show');
+                });
+            }
+
+            // 隐藏悬浮提示
+            hideHoverTooltip() {
+                if (this.hoverTooltip) {
+                    this.hoverTooltip.classList.remove('show');
+                }
+            }
+
+            // 绑定悬浮提示事件
+            bindTooltipEvents() {
+                // 名称列链接 - 点击打开
+                document.querySelectorAll('.name-cell a').forEach(link => {
+                    link.addEventListener('mouseenter', () => {
+                        this.showHoverTooltip(link, '点击打开');
+                    });
+                    link.addEventListener('mouseleave', () => {
+                        this.hideHoverTooltip();
+                    });
+                });
+
+                // 地址列 - 点击复制
+                document.querySelectorAll('.address-cell').forEach(cell => {
+                    cell.addEventListener('mouseenter', () => {
+                        this.showHoverTooltip(cell, '点击复制');
+                    });
+                    cell.addEventListener('mouseleave', () => {
+                        this.hideHoverTooltip();
+                    });
+                });
+
+                // 功能列 - 被截断时显示全文
+                document.querySelectorAll('.function-cell').forEach(cell => {
+                    cell.addEventListener('mouseenter', () => {
+                        if (cell.classList.contains('truncated')) {
+                            const fullText = cell.getAttribute('data-full-text');
+                            if (fullText) {
+                                this.showHoverTooltip(cell, fullText, true);
+                            }
+                        }
+                    });
+                    cell.addEventListener('mouseleave', () => {
+                        this.hideHoverTooltip();
+                    });
+                });
+            }
         }
 
         // 页面加载完成后初始化应用
         document.addEventListener('DOMContentLoaded', () => {
             window.AIWebpagesApp = new AIWebpagesApp();
-            
+
+            // 初始检测功能列文本截断
+            window.AIWebpagesApp.checkFunctionCellTruncation();
+
+            // 绑定悬浮提示事件
+            window.AIWebpagesApp.bindTooltipEvents();
+
+            // 窗口大小改变时重新检测
+            window.addEventListener('resize', () => {
+                window.AIWebpagesApp.checkFunctionCellTruncation();
+            });
+
             // 为所有表格添加滚动事件监听器
             document.querySelectorAll('.table-scroll').forEach(tableScroll => {
                 tableScroll.addEventListener('scroll', () => {
