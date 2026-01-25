@@ -966,15 +966,9 @@ window.WEBPAGES_DATA = {
           "Markdown工具": [
             {
               "名称": "Markdown Tab",
-              "地址": "https://markdown-tab.vercel.app",
+              "地址": "https://markdown-tab.netlify.app",
               "备注": "国际 | 直连 | 免费",
               "功能": "多页Markdown在线预览和编辑，支持缓存本地文本"
-            },
-            {
-              "名称": "Markdown Live Preview",
-              "地址": "https://markdownlivepreview.com",
-              "备注": "国际 | 直连 | 免费",
-              "功能": "实时Markdown预览工具，简洁高效"
             },
             {
               "名称": "MD2Card",
@@ -1065,13 +1059,13 @@ window.WEBPAGES_DATA = {
             {
               "名称": "时间线",
               "地址": "https://timeline-book.vercel.app",
-              "备注": "中国 | 直连 | 免费",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "记录重复事件的时间线，可视化时间管理"
             },
             {
               "名称": "投资记录",
               "地址": "https://invest-record.vercel.app",
-              "备注": "中国 | 直连 | 免费",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "简洁的个人投资记录工具"
             },
             {
@@ -1087,7 +1081,7 @@ window.WEBPAGES_DATA = {
             {
               "名称": "Claude Code手册",
               "地址": "https://claude-code-manual.vercel.app",
-              "备注": "中国 | 直连 | 免费",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "Claude Code的安装、使用教程、技巧和案例分享"
             }
           ]
@@ -1118,8 +1112,8 @@ window.WEBPAGES_DATA = {
             },
             {
               "名称": "你画AI猜",
-              "地址": "https://drawguess.liangz77.cn",
-              "备注": "中国 | 直连 | 免费",
+              "地址": "https://draw-guess-lime.vercel.app",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "用户画画，AI实时识别猜测，趣味互动"
             },
             {
@@ -1179,7 +1173,7 @@ window.WEBPAGES_DATA = {
             {
               "名称": "Woolly Run",
               "地址": "https://woolly-run.vercel.app",
-              "备注": "中国 | 直连 | 免费",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "休闲跑酷小游戏"
             }
           ]
@@ -1241,13 +1235,13 @@ window.WEBPAGES_DATA = {
             {
               "名称": "旅游攻略",
               "地址": "https://travel-draft.vercel.app",
-              "备注": "中国 | 直连 | 免费",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "旅游攻略大集合，出行规划参考"
             },
             {
               "名称": "触角",
               "地址": "https://chujiao.vercel.app",
-              "备注": "中国 | 直连 | 免费",
+              "备注": "国际 | 翻墙 | 免费",
               "功能": "网站优化和SEO分析工具"
             }
           ]
