@@ -966,7 +966,7 @@ window.WEBPAGES_DATA = {
           "Markdown工具": [
             {
               "名称": "Markdown Tab",
-              "地址": "https://markdown-tab.netlify.app",
+              "地址": "https://markdown-tab.vercel.app",
               "备注": "国际 | 直连 | 免费",
               "功能": "多页Markdown在线预览和编辑，支持缓存本地文本"
             },
