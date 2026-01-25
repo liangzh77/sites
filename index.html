@@ -356,11 +356,282 @@
             opacity: 1;
         }
 
-        /* 响应式设计 */
+        /* 移动端卡片容器 - 桌面端隐藏 */
+        .mobile-cards {
+            display: none;
+        }
+
+        /* ==================== 手机竖版响应式设计 ==================== */
         @media (max-width: 768px) {
-            .content-layout { grid-template-columns: 1fr; gap: 1rem; }
-            .type-nav { order: 2; max-height: 200px; }
-            .table-container { order: 1; }
+            body {
+                overflow: auto;
+                height: auto;
+            }
+
+            .main-container {
+                height: auto;
+                overflow: visible;
+                padding-bottom: 20px;
+            }
+
+            .header-section {
+                padding: 0.75rem 1rem 0;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: var(--bg-color);
+            }
+
+            .tabs-container {
+                padding: 0.5rem;
+                border-radius: 10px;
+                margin-bottom: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.85rem;
+                margin-right: 0.25rem;
+                border-radius: 6px;
+            }
+
+            .content-section {
+                padding: 0 1rem 1rem;
+                overflow: visible;
+            }
+
+            .tab-content {
+                height: auto;
+            }
+
+            .content-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                height: auto;
+            }
+
+            /* 类型导航改为横向滚动，固定显示 */
+            .type-nav {
+                order: 1;
+                height: auto;
+                max-height: none;
+                border-radius: 10px;
+                position: sticky;
+                top: 60px;
+                z-index: 99;
+                background: var(--card-bg);
+                margin: 0 -1rem;
+                padding: 0;
+                border-radius: 0;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+            .type-nav h3 {
+                display: none;
+            }
+
+            .type-nav-list {
+                display: flex;
+                flex-direction: row;
+                overflow-x: auto;
+                gap: 0.5rem;
+                padding: 0.75rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .type-nav-list::-webkit-scrollbar {
+                display: none;
+            }
+
+            .type-nav-item {
+                flex-shrink: 0;
+                padding: 0.5rem 1rem;
+                margin: 0;
+                font-size: 0.85rem;
+                border-radius: 20px;
+                background: var(--bg-color);
+                white-space: nowrap;
+            }
+
+            .type-nav-item.active {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            /* 表格容器改为卡片列表 */
+            .table-container {
+                order: 2;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .table-scroll {
+                overflow: visible;
+            }
+
+            /* 隐藏桌面端表格，显示移动端卡片 */
+            table {
+                display: none;
+            }
+
+            /* 移动端工具卡片样式 */
+            .mobile-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 0.75rem;
+            }
+
+            .mobile-card {
+                background: white;
+                border-radius: 10px;
+                padding: 0.75rem 1rem;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+                border: 1px solid var(--border-color);
+            }
+
+            .mobile-card-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .mobile-card-name {
+                font-weight: 600;
+                font-size: 1rem;
+                color: var(--primary-color);
+                text-decoration: none;
+                flex: 1;
+            }
+
+            .mobile-card-name:hover {
+                text-decoration: underline;
+            }
+
+            .mobile-card-tags {
+                display: flex;
+                gap: 0.5rem;
+                flex-shrink: 0;
+                margin-left: 0.5rem;
+            }
+
+            .mobile-tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+                border-radius: 4px;
+                background: #EEF2FF;
+                color: #4F46E5;
+                white-space: nowrap;
+            }
+
+            .mobile-tag.tag-vpn {
+                background: #FEE2E2;
+                color: #DC2626;
+            }
+
+            .mobile-tag.tag-free {
+                background: #D1FAE5;
+                color: #059669;
+            }
+
+            .mobile-tag.tag-paid {
+                background: #FEF3C7;
+                color: #D97706;
+            }
+
+            .mobile-card-desc {
+                font-size: 0.85rem;
+                color: #6B7280;
+                line-height: 1.4;
+                margin-top: 0.35rem;
+            }
+
+            .mobile-card-actions {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            .mobile-btn {
+                flex: 1;
+                padding: 0.6rem 1rem;
+                border-radius: 8px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                border: none;
+            }
+
+            .mobile-btn-primary {
+                background: var(--primary-color);
+                color: white;
+            }
+
+            .mobile-btn-primary:hover {
+                background: var(--hover-color);
+            }
+
+            .mobile-btn-secondary {
+                background: var(--bg-color);
+                color: #4B5563;
+            }
+
+            .mobile-btn-secondary:hover {
+                background: #E5E7EB;
+            }
+
+            /* 类型分组标题 */
+            .mobile-type-header {
+                font-weight: 600;
+                font-size: 0.9rem;
+                color: #374151;
+                padding: 0.75rem 0 0.5rem;
+                margin-top: 0.5rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .mobile-type-header:first-child {
+                margin-top: 0;
+                border-top: none;
+                padding-top: 0;
+            }
+
+            /* 复制成功提示优化 */
+            .copy-tooltip {
+                position: fixed;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%);
+                padding: 12px 24px;
+                font-size: 14px;
+                border-radius: 8px;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                border: none;
+            }
+
+            /* 悬浮提示在移动端禁用 */
+            .hover-tooltip {
+                display: none !important;
+            }
+        }
+
+        /* 平板设备适配 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .content-layout {
+                grid-template-columns: 180px 1fr;
+            }
+
+            .header-section {
+                padding: 0.75rem 1.5rem 0;
+            }
+
+            .content-section {
+                padding: 0 1.5rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -576,6 +847,9 @@
                 tableBody.innerHTML = '';
                 const types = []; // 收集类型列表
 
+                // 同时生成移动端卡片视图
+                this.generateMobileCards(tableBodyId, pageData);
+
                 // 动态检查页面数据中是否有非空的功能字段
                 const hasFunctionColumn = pageData['类型'].length > 0 && 
                                        pageData['类型'][0] && 
@@ -674,22 +948,147 @@
                 });
             }
 
+            // 生成移动端卡片视图
+            generateMobileCards(tableBodyId, pageData) {
+                const tableScroll = document.getElementById(tableBodyId)?.closest('.table-scroll');
+                if (!tableScroll || !pageData || !pageData['类型']) return;
+
+                // 移除现有的移动端卡片容器
+                const existingMobileCards = tableScroll.querySelector('.mobile-cards');
+                if (existingMobileCards) {
+                    existingMobileCards.remove();
+                }
+
+                // 创建移动端卡片容器
+                const mobileContainer = document.createElement('div');
+                mobileContainer.className = 'mobile-cards';
+
+                pageData['类型'].forEach(categoryObj => {
+                    const categoryName = Object.keys(categoryObj)[0];
+                    const tools = categoryObj[categoryName];
+
+                    // 添加类型分组标题
+                    const typeHeader = document.createElement('div');
+                    typeHeader.className = 'mobile-type-header';
+                    typeHeader.textContent = categoryName;
+                    typeHeader.setAttribute('data-type', categoryName);
+                    mobileContainer.appendChild(typeHeader);
+
+                    // 为该类型下的每个工具创建卡片
+                    tools.forEach(tool => {
+                        const card = this.createMobileCard(tool);
+                        mobileContainer.appendChild(card);
+                    });
+                });
+
+                tableScroll.appendChild(mobileContainer);
+            }
+
+            // 创建单个移动端工具卡片
+            createMobileCard(tool) {
+                const card = document.createElement('div');
+                card.className = 'mobile-card';
+
+                // 解析备注获取标签，同时传入地址用于判断
+                const tags = this.parseNoteTags(tool['备注'] || '', tool['地址'] || '');
+
+                // 卡片头部：名称 + 标签
+                const header = document.createElement('div');
+                header.className = 'mobile-card-header';
+
+                const nameLink = document.createElement('a');
+                nameLink.className = 'mobile-card-name';
+                nameLink.href = tool['地址'];
+                nameLink.target = '_blank';
+                nameLink.textContent = tool['名称'];
+                header.appendChild(nameLink);
+
+                if (tags.length > 0) {
+                    const tagsContainer = document.createElement('div');
+                    tagsContainer.className = 'mobile-card-tags';
+                    tags.forEach(tag => {
+                        const tagEl = document.createElement('span');
+                        tagEl.className = `mobile-tag ${tag.class}`;
+                        tagEl.textContent = tag.text;
+                        tagsContainer.appendChild(tagEl);
+                    });
+                    header.appendChild(tagsContainer);
+                }
+
+                card.appendChild(header);
+
+                // 功能描述
+                if (tool['功能']) {
+                    const desc = document.createElement('div');
+                    desc.className = 'mobile-card-desc';
+                    desc.textContent = tool['功能'];
+                    card.appendChild(desc);
+                }
+
+                return card;
+            }
+
+            // 解析备注字段获取标签
+            parseNoteTags(note, url = '') {
+                const tags = [];
+                const noteStr = note.toLowerCase();
+                const urlStr = url.toLowerCase();
+
+                // Netlify 和 Markdown 站点需要翻墙
+                if (urlStr.includes('netlify') || urlStr.includes('markdown')) {
+                    tags.push({ text: '翻墙', class: 'tag-vpn' });
+                } else if (noteStr.includes('翻墙')) {
+                    tags.push({ text: '翻墙', class: 'tag-vpn' });
+                } else if (noteStr.includes('直连')) {
+                    tags.push({ text: '直连', class: 'tag-free' });
+                }
+
+                if (noteStr.includes('免费')) {
+                    tags.push({ text: '免费', class: 'tag-free' });
+                } else if (noteStr.includes('付费')) {
+                    tags.push({ text: '付费', class: 'tag-paid' });
+                } else if (noteStr.includes('freemium')) {
+                    tags.push({ text: 'Freemium', class: '' });
+                }
+
+                return tags;
+            }
+
             // 滚动到指定类型
             scrollToType(type, navListId, tableBodyId) {
-                const typeCell = document.querySelector(`#${tableBodyId} td[data-type="${type}"]`);
-                if (!typeCell) return;
+                // 检测是否为移动端视图
+                const isMobile = window.innerWidth <= 768;
 
-                const tableScroll = typeCell.closest('.table-scroll');
-                const tableRect = tableScroll.getBoundingClientRect();
-                const cellRect = typeCell.getBoundingClientRect();
-                const headerHeight = tableScroll.querySelector('thead').getBoundingClientRect().height;
-                
-                const scrollTop = tableScroll.scrollTop + (cellRect.top - tableRect.top) - headerHeight - 10;
-                
-                tableScroll.scrollTo({
-                    top: Math.max(0, scrollTop),
-                    behavior: 'smooth'
-                });
+                if (isMobile) {
+                    // 移动端：滚动到类型标题
+                    const typeHeader = document.querySelector(`.mobile-type-header[data-type="${type}"]`);
+                    if (!typeHeader) return;
+
+                    const headerOffset = 130; // 留出顶部标签栏+类型导航栏空间
+                    const elementPosition = typeHeader.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // 桌面端：滚动表格
+                    const typeCell = document.querySelector(`#${tableBodyId} td[data-type="${type}"]`);
+                    if (!typeCell) return;
+
+                    const tableScroll = typeCell.closest('.table-scroll');
+                    const tableRect = tableScroll.getBoundingClientRect();
+                    const cellRect = typeCell.getBoundingClientRect();
+                    const headerHeight = tableScroll.querySelector('thead').getBoundingClientRect().height;
+
+                    const scrollTop = tableScroll.scrollTop + (cellRect.top - tableRect.top) - headerHeight - 10;
+
+                    tableScroll.scrollTo({
+                        top: Math.max(0, scrollTop),
+                        behavior: 'smooth'
+                    });
+                }
 
                 this.updateActiveNavItem(type, navListId);
             }
