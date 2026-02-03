@@ -1248,7 +1248,7 @@ window.WEBPAGES_DATA = {
               "名称": "触角",
               "地址": "https://chujiao.vercel.app",
               "备注": "国际 | 翻墙 | 免费",
-              "功能": "网站优化和SEO分析工具"
+              "功能": "公司网站优化"
             }
           ]
         }
