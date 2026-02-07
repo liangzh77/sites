@@ -817,9 +817,12 @@
 
                 // 激活当前按钮
                 button.classList.add('tab-active');
-                
+
                 // 更新当前标签页
                 this.currentTab = button.textContent;
+
+                // 切换标签后重新检测功能列截断
+                this.checkFunctionCellTruncation();
             }
 
             // 初始化所有表格
@@ -1196,41 +1199,41 @@
                 }
             }
 
-            // 绑定悬浮提示事件
+            // 绑定悬浮提示事件（使用事件委托，只需绑定一次）
             bindTooltipEvents() {
-                // 名称列链接 - 点击打开
-                document.querySelectorAll('.name-cell a').forEach(link => {
-                    link.addEventListener('mouseenter', () => {
+                if (this.tooltipEventsBound) return;
+                this.tooltipEventsBound = true;
+
+                document.addEventListener('mouseover', (e) => {
+                    // 名称列链接 - 点击打开
+                    const link = e.target.closest('.name-cell a');
+                    if (link) {
                         this.showHoverTooltip(link, '点击打开');
-                    });
-                    link.addEventListener('mouseleave', () => {
-                        this.hideHoverTooltip();
-                    });
-                });
+                        return;
+                    }
 
-                // 地址列 - 点击复制
-                document.querySelectorAll('.address-cell').forEach(cell => {
-                    cell.addEventListener('mouseenter', () => {
-                        this.showHoverTooltip(cell, '点击复制');
-                    });
-                    cell.addEventListener('mouseleave', () => {
-                        this.hideHoverTooltip();
-                    });
-                });
+                    // 地址列 - 点击复制
+                    const addressCell = e.target.closest('.address-cell');
+                    if (addressCell) {
+                        this.showHoverTooltip(addressCell, '点击复制');
+                        return;
+                    }
 
-                // 功能列 - 被截断时显示全文
-                document.querySelectorAll('.function-cell').forEach(cell => {
-                    cell.addEventListener('mouseenter', () => {
-                        if (cell.classList.contains('truncated')) {
-                            const fullText = cell.getAttribute('data-full-text');
-                            if (fullText) {
-                                this.showHoverTooltip(cell, fullText, true);
-                            }
+                    // 功能列 - 被截断时显示全文
+                    const functionCell = e.target.closest('.function-cell');
+                    if (functionCell && functionCell.classList.contains('truncated')) {
+                        const fullText = functionCell.getAttribute('data-full-text');
+                        if (fullText) {
+                            this.showHoverTooltip(functionCell, fullText, true);
                         }
-                    });
-                    cell.addEventListener('mouseleave', () => {
+                    }
+                });
+
+                document.addEventListener('mouseout', (e) => {
+                    const target = e.target.closest('.name-cell a, .address-cell, .function-cell');
+                    if (target) {
                         this.hideHoverTooltip();
-                    });
+                    }
                 });
             }
         }
