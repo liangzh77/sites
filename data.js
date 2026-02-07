@@ -1079,6 +1079,12 @@ window.WEBPAGES_DATA = {
               "地址": "https://list-chore.netlify.app",
               "备注": "中国 | 直连 | 免费",
               "功能": "打印一周家务清单，家庭管理助手"
+            },
+            {
+              "名称": "家庭记账本",
+              "地址": "https://wallet-liangz77.vercel.app",
+              "备注": "中国 | 直连 | 免费",
+              "功能": "记录多人现金和消费"
             }
           ]
         },
