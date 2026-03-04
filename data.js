@@ -1019,6 +1019,12 @@ window.WEBPAGES_DATA = {
               "地址": "https://demo-liangz77.vercel.app",
               "备注": "国际 | 翻墙 | 免费",
               "功能": "临时演示和测试用网页"
+            },
+            {
+              "名称": "密钥分发系统",
+              "地址": "https://distribute-keys.vercel.app",
+              "备注": "国际 | 翻墙 | 免费",
+              "功能": "密钥分发和管理系统"
             }
           ]
         },
